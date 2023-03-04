@@ -7,7 +7,7 @@
  * @updateUrl https://mdev123.github.io/betterdiscord-positivity/positivity.plugin.js
  */
 
-const version = Number("0.1.0".replaceAll('.', ''))
+const version = Number("0.1.3".replaceAll('.', ''))
 
 const config = {
     info: {
@@ -17,7 +17,7 @@ const config = {
                 name: "kno",
             },
         ],
-        version: "0.0.2",
+        version: "0.1.3",
         description: "Great positivity!",
     },
     changelog: [
