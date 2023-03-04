@@ -2,11 +2,12 @@
  * @name Positivity
  * @version 0.1.0
  * @description Enjoy great positivity.
- * @source https://github.com/MDev123/betterdiscord-positivity/main
- * @updateUrl https://github.com/MDev123/betterdiscord-positivity/main/positivity.plugin.js
+ * @author kno
+  * @source https://github.com/MDev123/betterdiscord-positivity/main
+ * @updateUrl https://mdev123.github.io/betterdiscord-positivity/positivity.plugin.js
  */
 
-const request = require("request");
+const version = Number("0.1.0".replaceAll('.', ''))
 
 const config = {
     info: {
@@ -16,19 +17,24 @@ const config = {
                 name: "kno",
             },
         ],
-        version: "0.1.0",
+        version: "0.0.2",
         description: "Great positivity!",
     },
     changelog: [
         {
-            title: "Updates",
+            title: "**Updates**",
             type: "fixed",
             items: ["Added more positivity quotes."],
         },
         {
-            title: "Bug Fixes",
+            title: "**Bug Fixes**",
             type: "fixed",
             items: ["Fixed a bug where the same quote could be shown twice in a row."],
+        },
+        {
+            title: "# Twitter",
+            type: "fixed",
+            items: ["Follow us on twitter! https://twitter.com/BPositivityLife"]
         },
     ],
     defaultConfig: [],
@@ -44,9 +50,6 @@ module.exports = class Positivity {
             .join("\n\n");
         const changelog = `# Changelog\n\n${changes}`;
         BdApi.alert("💡 Positivity 💡", changelog);
-
-        // Check for updates
-        this.checkForUpdates();
 
         // Array of positivity quotes
         const positivityQuotes = [
@@ -80,45 +83,22 @@ module.exports = class Positivity {
     }
 
     stop() {
+        BdApi.showNotice(randomQuote)
         console.log("[Positivity] Plugin stopped.");
         BdApi.alert("💡 Positivity 💡", "Positivity plugin has been shutdown. See you next time, though!");
     }
-    checkForUpdates() {
-        const updateUrl = this.constructor.config.info.updateUrl;
-        if (!updateUrl) {
-            console.log("[Positivity] No update URL found.");
-            return;
-        }
-    
-        console.log("[Positivity] Checking for updates...");
-        request(updateUrl, (err, res, body) => {
-            if (err) {
-                console.error("[Positivity] Error checking for updates:", err);
-                return;
-            }
-    
-            if (res.statusCode !== 200) {
-                console.error(`[Positivity] Error checking for updates: HTTP ${res.statusCode}`);
-                return;
-            }
-    
-            const versionRegex = /@version\s+([^\s]+)/;
-            const match = body.match(versionRegex);
-            if (!match) {
-                console.log("[Positivity] Update URL found, but version not specified.");
-                return;
-            }
-    
-            const remoteVersion = match[1];
-            const currentVersion = this.constructor.config.info.version;
-    
-            if (remoteVersion === currentVersion) {
-                console.log(`[Positivity] Plugin is up-to-date (v${currentVersion}).`);
-                return;
-            }
-    
-            console.log(`[Positivity] New version available: v${remoteVersion} (current version: v${currentVersion}).`);
-            BdApi.alert("💡 Positivity 💡", `A new version of the Positivity plugin is available (v${remoteVersion}). Please update the plugin for a better experience!!`);
-        });
+
+     load() {
+        fetch("https://mdev123.github.io/betterdiscord-positivity/positivity.plugin.js", {cache: "no-store"}).then(res => res.text()).then(res => {
+			let newVersion = Number(res.substring(res.indexOf("version") + 8, res.indexOf("version") + 13).replaceAll('.', ''))
+			if (newVersion > version) {
+				console.log("UPDATING!")
+				require("fs").writeFile(`${BdApi.Plugins.folder}/Template.plugin.js`, res)
+			}
+		})
     }
-}    
+
+    constructor(c) {
+        this.config = c
+    }
+};
