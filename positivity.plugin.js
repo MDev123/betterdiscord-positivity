@@ -17,19 +17,19 @@ const config = {
                 name: "kno",
             },
         ],
-        version: "0.0.2",
+        version: "0.1.0",
         description: "Great positivity!",
     },
     changelog: [
         {
             title: "**Updates**",
-            type: "fixed",
-            items: ["Added more positivity quotes."],
+            type: "added",
+            items: ["Added more positivity quotes.", "Added auto-updater, so you don't need to!"],
         },
         {
             title: "**Bug Fixes**",
             type: "fixed",
-            items: ["Fixed a bug where the same quote could be shown twice in a row."],
+            items: ["Fixed a bug where the same quote could be shown twice in a row.", "Fixed "],
         },
         {
             title: "# Twitter",
