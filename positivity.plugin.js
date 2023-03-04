@@ -1,13 +1,13 @@
 /**
  * @name Positivity
- * @version 0.1.0
+ * @version 0.1.3
  * @description Enjoy great positivity.
  * @author kno
   * @source https://github.com/MDev123/betterdiscord-positivity/main
  * @updateUrl https://mdev123.github.io/betterdiscord-positivity/positivity.plugin.js
  */
 
-const version = Number("0.1.3".replaceAll('.', ''))
+const version = Number("0.1.0".replaceAll('.', ''))
 
 const config = {
     info: {
@@ -17,7 +17,7 @@ const config = {
                 name: "kno",
             },
         ],
-        version: "0.1.3",
+        version: "0.1.0",
         description: "Great positivity!",
     },
     changelog: [
@@ -94,6 +94,7 @@ module.exports = class Positivity {
 			if (newVersion > version) {
 				console.log("UPDATING!")
 				require("fs").writeFile(`${BdApi.Plugins.folder}/Template.plugin.js`, res)
+				BdApi.alert("Updating", "Plugin auto updating")
 			}
 		})
     }
