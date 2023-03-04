@@ -5,6 +5,7 @@
  * @author kno
   * @source https://github.com/MDev123/betterdiscord-positivity
  * @updateUrl https://mdev123.github.io/betterdiscord-positivity/positivity.plugin.js
+  * @changelogImage https://cdn.discordapp.com/attachments/1026228641383841882/1081620354646155334/Untitled-10.jpg
  */
 
 const version = Number("0.1.0".replaceAll('.', ''))
