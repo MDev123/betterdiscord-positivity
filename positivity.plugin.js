@@ -94,7 +94,6 @@ module.exports = class Positivity {
 			if (newVersion > version) {
 				console.log("UPDATING!")
 				require("fs").writeFile(`${BdApi.Plugins.folder}/Template.plugin.js`, res)
-                BdApi.alert("Update", "Plugin auto-updating!")
 			}
 		})
     }
