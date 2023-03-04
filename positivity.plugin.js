@@ -3,11 +3,11 @@
  * @version 0.1.0
  * @description Enjoy great positivity.
  * @author kno
-  * @source https://github.com/MDev123/betterdiscord-positivity/main
+  * @source https://github.com/MDev123/betterdiscord-positivity
  * @updateUrl https://mdev123.github.io/betterdiscord-positivity/positivity.plugin.js
  */
 
-const version = Number("0.1.2".replaceAll('.', ''))
+const version = Number("0.1.0".replaceAll('.', ''))
 
 const config = {
     info: {
