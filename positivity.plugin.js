@@ -1,6 +1,6 @@
 /**
  * @name Positivity
- * @version 0.1.0
+ * @version 0.1.1
  * @description Enjoy great positivity.
  * @author kno
   * @source https://github.com/MDev123/betterdiscord-positivity
@@ -8,7 +8,7 @@
   * @changelogImage https://media.discordapp.net/attachments/1080608995083042896/1081622153943855124/Untitled-10.jpg?width=1726&height=970
  */
 
-const version = Number("0.1.0".replaceAll('.', ''))
+const version = Number("0.1.1".replaceAll('.', ''))
 
 const config = {
     info: {
@@ -18,7 +18,7 @@ const config = {
                 name: "kno",
             },
         ],
-        version: "0.1.0",
+        version: "0.1.1",
         description: "Great positivity!",
     },
     changelog: [
