@@ -7,7 +7,7 @@
  * @updateUrl https://mdev123.github.io/betterdiscord-positivity/positivity.plugin.js
  */
 
-const version = Number("0.1.0".replaceAll('.', ''))
+const version = Number("0.1.2".replaceAll('.', ''))
 
 const config = {
     info: {
