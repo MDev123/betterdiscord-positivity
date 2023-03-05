@@ -25,7 +25,7 @@ const config = {
         {
             title: "**Updates**",
             type: "added",
-            items: ["Added more positivity quotes.", "Added auto-updater, so you don't need to!"],
+            items: ["Added more positivity quotes."],
         },
         {
             title: "**Bug Fixes**",
