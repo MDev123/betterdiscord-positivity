@@ -30,10 +30,10 @@ const config = {
         {
             title: "**Bug Fixes**",
             type: "fixed",
-            items: ["Fixed a bug where the same quote could be shown twice in a row.", "Fixed "],
+            items: ["Fixed a bug where the same quote could be shown twice in a row.", "Removed auto-updater due to it causing lots of bugs."],
         },
         {
-            title: "# Twitter",
+            title: "**Twitter**",
             type: "fixed",
             items: ["Follow us on twitter! https://twitter.com/BPositivityLife"]
         },
