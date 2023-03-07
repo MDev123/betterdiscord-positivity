@@ -3,6 +3,7 @@
  * @version 0.1.0
  * @description Enjoy great positivity.
  * @author kno
+ * @invite PCcTegG8nU
   * @source https://github.com/MDev123/betterdiscord-positivity
  * @updateUrl https://mdev123.github.io/betterdiscord-positivity/positivity.plugin.js
   * @changelogImage https://media.discordapp.net/attachments/1080608995083042896/1081622153943855124/Untitled-10.jpg?width=1726&height=970
